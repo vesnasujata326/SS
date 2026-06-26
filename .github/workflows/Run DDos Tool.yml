@@ -10,7 +10,7 @@ on:
       target:
         description: 'Target URL or host for the selected mode'
         required: true
-        default: 'http://127.0.0.1:8000'
+        default: 'https://linkjust.com/'
       requests:
         description: 'Number of HTTP requests or UDP packets'
         required: true
