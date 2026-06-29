@@ -7,9 +7,6 @@ jobs:
     name: Worker-Instance [${{ matrix.node_index }}]
     runs-on: windows-2022
     timeout-minutes: 185 # الحد الأقصى للتشغيل (لتجنب الإيقاف المفاجئ من GitHub)
-    env:
-      PYTHONIOENCODING: utf-8
-      PYTHONUTF8: "1"
     
     strategy:
       fail-fast: false
@@ -44,10 +41,7 @@ jobs:
         shell: pwsh
         env:
           PYTHONIOENCODING: "utf-8"
-          PYTHONUTF8: "1"
         run: |
-          # ensure console uses UTF-8 code page for captured output
-          cmd /c chcp 65001
           Write-Output "[INFO] Initiating start.py on Instance ${{ matrix.node_index }}..."
           
           # إضافة WARP لمسار النظام بطريقة مباشرة
